@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunkvp.com">
-  <title>h5|前端|javascript|奋斗的巴豆博客</title>
+  <title>你需要知道的几种web存储的方法 | h5|前端|javascript|奋斗的巴豆博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕">
+  <meta name="description" content="在日常的前端开发过程中本地存储技术还是很常用的，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕后，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="h5|前端|javascript|奋斗的巴豆博客">
+<meta property="og:title" content="你需要知道的几种web存储的方法">
 <meta property="og:url" content="http://hunkvp.com/2017/10/11/你需要知道几种本地存储方法-2/index.html">
 <meta property="og:site_name" content="h5|前端|javascript|奋斗的巴豆博客">
-<meta property="og:description" content="在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕">
-<meta property="og:updated_time" content="2017-10-11T06:20:09.464Z">
+<meta property="og:description" content="在日常的前端开发过程中本地存储技术还是很常用的，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕后，">
+<meta property="og:updated_time" content="2017-10-11T07:37:53.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="h5|前端|javascript|奋斗的巴豆博客">
-<meta name="twitter:description" content="在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕">
+<meta name="twitter:title" content="你需要知道的几种web存储的方法">
+<meta name="twitter:description" content="在日常的前端开发过程中本地存储技术还是很常用的，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕后，">
   
     <link rel="alternative" href="/atom.xml" title="h5|前端|javascript|奋斗的巴豆博客" type="application/atom+xml">
   
@@ -160,9 +160,24 @@
             <article id="post-你需要知道几种本地存储方法-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      你需要知道的几种web存储的方法
+    </h1>
+  
+
+        
+        <a href="/2017/10/11/你需要知道几种本地存储方法-2/" class="archive-article-date">
+  	<time datetime="2017-10-11T03:47:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。</p>
+        <p>在日常的前端开发过程中本地存储技术还是很常用的，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术。</p>
 <h3 id="1、cookie"><a href="#1、cookie" class="headerlink" title="1、cookie"></a>1、cookie</h3><p>Cookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕后，服务器端和客户端的链接就会关闭，每次交换数据都需要建立新的链接，此时，服务器无法从链接<br>上跟踪会话，而cookie恰恰可以记录跟踪会话，弥补HTTP无状态协议的不足。</p>
 <p>多数网页编程语言都提供了对Cookie的支持。如javascript、VBScript、Delphi、ASP、SQL、PHP、C#等。且在这些面向对象的编程语言中操作cookie的方法也大体相同。</p>
 <p>在chrome浏览器中可以通过控制台的　application　&gt;  cookie 查看当前域名下的所有cookie在这里看到的都是以　key - value　呈现出来的；当然你也可以通过通过控制台的console使用命令查看以及设置cookie信息：</p>
@@ -173,10 +188,18 @@
 <p>当然还有些地方可以查看当前浏览器cookie的信息比如每个ajax请求的请求头，request header里面你可以看到一个cookie的key值这里就是当前域名下所有的cookie信息。</p>
 <p>cookie的弊端也是显而意见的比如，他的安全性，以及他作为web存储方式所能存储的体积，还有一些对带宽的浪费等等，而后续h5提供的web storage ：lcoalStorage和sessionStorage较cookie 在很多方面有了很大的提升。</p>
 <h3 id="2、localStorage和sessionStorage"><a href="#2、localStorage和sessionStorage" class="headerlink" title="2、localStorage和sessionStorage"></a>2、localStorage和sessionStorage</h3><p>localStorage和sessionStorage都是 h5的产物他们主要作用将数据保存在客户端中。</p>
-<p>一般情况下localStorage保存的数据是永久保存的，也就是说只要采用localstorage保存信息，数据便一直存储在用户的客户端中。即使用户关闭当前web浏览器后重新启动，数据依然存在。知道用户或程序明确制定删除，数据的生命周期才会结束,而sessionStorage属于临时性存储当会话结束的时候，当前域下的所有sessionStorage键值对会被清空，这个也是两者主要区别</p>
+<p>一般情况下localStorage保存的数据是永久保存的，也就是说只要采用localstorage保存信息，数据便一直存储在用户的客户端中。即使用户关闭当前web浏览器后重新启动，数据依然存在。知道用户或程序明确制定删除，数据的生命周期才会结束,而sessionStorage属于临时性存储当会话结束的时候，当前域下的所有sessionStorage键值对会被清空，这个也是两者主要区别，从这个角度说sessionStorage较localStorage要安全性要很多。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ window.localStorage.setItem(<span class="string">'LIST'</span>,<span class="string">'item1'</span>)</div><div class="line">$ window.localStorage.getItem(<span class="string">'LIST'</span>) // item1</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ window.localStorage.removeItem(<span class="string">'LIST'</span>)</div><div class="line">$ window.localStorage.clear()</div></pre></td></tr></table></figure>
-<p>以上是localStorage的基本操作方法（sessionStorage也是一样的）包括对存储信息的增删改查和清空操作</p>
+<p>以上是localStorage的基本操作方法（sessionStorage也是一样的）包括对存储信息的增删改查和清空操作。需要注意的是这两者方法存储的都是字符串信息，这就要求在存之前将要存储的信息换成字符串。比如当我们存的东西是一个数组或者是一个JSON的时候你就要通过JSON.stringify的方法处理一下再做存操作。可以看出这些键值对的设置和获取比cookie操作起来方便了许多不用在自己封装getCookie 以及 setCookie 的方法了。</p>
+<p>对于两者的存储数据的大小是不固定的不同浏览器支持的是不一样的，各浏览器存储的max值在5M左右，但是需要注意的是不到万不得已千万不要存储上M的数据，如果你不怕浏览器崩溃的话那就另当别论了。</p>
+<p>对于兼容 ECMAScript 5 的浏览器来说这两者存储方法都是兼容的，你可以使用类似以下方法去做兼容校验<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(typeof window.localStorage == <span class="string">'undefined'</span>)&#123; alert(<span class="string">"浏览暂不支持localStorage"</span>) &#125;</div></pre></td></tr></table></figure></p>
+<p> 提到兼容笔者发现一个很有趣的问题也许对你今后使用这两种存储方法的时候有些帮助:</p>
+<p> 关于sessionStorage在一些低端国产手机的自带浏览器中表现不如localStorage。曾遇到过这样的坑，在某米2的自带浏览器中sessionStorage.setItem()是能执行成功的，但是sessionStorage.getItem()却始终返回undefined让人很费解。后续也没有查到真正的原因自己对这个理解就是安卓手机自带的浏览器一般是手机厂商自行开发的普通浏览器虽然也是webkit内核的但是其性能令人堪忧。这个可以算是sessionStorage和localStorage的第二个区别吧。</p>
+<p> 当然localStorage 和 sessionStorage也有不少弊端：</p>
+<p> 1.不兼容IE8。这个导致web Storage无法在pc上大面积使用。<br> 2.个浏览器支持的大小不一。<br> 3.存储的值限定为字符串。<br> 4.存储读取本质上是对字符串的操作，会消耗内存，大量数据的操作会引起页面卡顿。<br> 5.安全性差。</p>
+<p>还有一些web存储的方法比如：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/IndexedDB_API" target="_blank" rel="external">indexedDB</a> ,  <a href="http://www.runoob.com/html/html5-web-sql.html" target="_blank" rel="external">indexedDB</a> 感兴趣大家可以去看一下在这就不做详解了。</p>
+<p> 特别提醒：web存储固然好用但是使用他的时候一定要记得考虑在什么时候清除你在某一个时间点存入的信息，或者说更新在某一个时间点存入的信息。</p>
 
       
 
