@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunkvp.com">
-  <title>Archives: 2017 | h5|前端|javascript|奋斗的巴豆博客</title>
+  <title>h5|前端|javascript|奋斗的巴豆博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="h5|前端|javascript|奋斗的巴豆博客">
-<meta property="og:type" content="website">
+  <meta name="description" content="在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕">
+<meta property="og:type" content="article">
 <meta property="og:title" content="h5|前端|javascript|奋斗的巴豆博客">
-<meta property="og:url" content="http://hunkvp.com/archives/2017/index.html">
+<meta property="og:url" content="http://hunkvp.com/2017/10/11/你需要知道几种本地存储方法-2/index.html">
 <meta property="og:site_name" content="h5|前端|javascript|奋斗的巴豆博客">
-<meta property="og:description" content="h5|前端|javascript|奋斗的巴豆博客">
+<meta property="og:description" content="在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕">
+<meta property="og:updated_time" content="2017-10-11T06:20:09.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="h5|前端|javascript|奋斗的巴豆博客">
-<meta name="twitter:description" content="h5|前端|javascript|奋斗的巴豆博客">
+<meta name="twitter:description" content="在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。 1、cookieCookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕">
   
     <link rel="alternative" href="/atom.xml" title="h5|前端|javascript|奋斗的巴豆博客" type="application/atom+xml">
   
@@ -156,70 +157,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-你需要知道几种本地存储方法-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在日常的前端开发过程中本地存储技术还是很常用，比如在前后台交互过程中使用到的cookie，以及h5中经典的localstorage和sessionstorage，这些存储技术给我们开发带来很多方便之处。下面就给大家简单介绍一下这些技术的使用。</p>
+<h3 id="1、cookie"><a href="#1、cookie" class="headerlink" title="1、cookie"></a>1、cookie</h3><p>Cookie是一些数据, 存储于浏览器中。是由HTTP服务器设置的，发送给User-Agent，HTTP协议是一种无状态协议，在数据交换完毕后，服务器端和客户端的链接就会关闭，每次交换数据都需要建立新的链接，此时，服务器无法从链接<br>上跟踪会话，而cookie恰恰可以记录跟踪会话，弥补HTTP无状态协议的不足。</p>
+<p>多数网页编程语言都提供了对Cookie的支持。如javascript、VBScript、Delphi、ASP、SQL、PHP、C#等。且在这些面向对象的编程语言中操作cookie的方法也大体相同。</p>
+<p>在chrome浏览器中可以通过控制台的　application　&gt;  cookie 查看当前域名下的所有cookie在这里看到的都是以　key - value　呈现出来的；当然你也可以通过通过控制台的console使用命令查看以及设置cookie信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ document.cookie</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ document.cookie=<span class="string">"_passengerFlow_sessionId=8ad1a5f925a1de89a08;path=/; domain=.xxx.com"</span></div></pre></td></tr></table></figure>
+<p>当你是用document.cookie查看本地存储的cookie信息的时候控制台呈现的是纯字符串，这样看起来就不怎么直观了但当时候这种方式设置cookie是就显得很方便了。设置时应当注意domain参数的设置否则你可能无法设置成功。</p>
+<p>下面是一个获取对应cookie的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> getCookie (name) &#123;</div><div class="line">  var arr</div><div class="line">  var reg = new RegExp(<span class="string">'(^| )'</span> + name + <span class="string">'=([^;]*)(;|$)'</span>)</div><div class="line">  arr = document.cookie.match(reg)</div><div class="line">  <span class="keyword">if</span> (arr) &#123;</div><div class="line">    <span class="built_in">return</span> arr[2]</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">return</span> <span class="string">''</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然还有些地方可以查看当前浏览器cookie的信息比如每个ajax请求的请求头，request header里面你可以看到一个cookie的key值这里就是当前域名下所有的cookie信息。</p>
+<p>cookie的弊端也是显而意见的比如，他的安全性，以及他作为web存储方式所能存储的体积，还有一些对带宽的浪费等等，而后续h5提供的web storage ：lcoalStorage和sessionStorage较cookie 在很多方面有了很大的提升。</p>
+<h3 id="2、localStorage和sessionStorage"><a href="#2、localStorage和sessionStorage" class="headerlink" title="2、localStorage和sessionStorage"></a>2、localStorage和sessionStorage</h3><p>localStorage和sessionStorage都是 h5的产物他们主要作用将数据保存在客户端中。</p>
+<p>一般情况下localStorage保存的数据是永久保存的，也就是说只要采用localstorage保存信息，数据便一直存储在用户的客户端中。即使用户关闭当前web浏览器后重新启动，数据依然存在。知道用户或程序明确制定删除，数据的生命周期才会结束,而sessionStorage属于临时性存储当会话结束的时候，当前域下的所有sessionStorage键值对会被清空，这个也是两者主要区别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ window.localStorage.setItem(<span class="string">'LIST'</span>,<span class="string">'item1'</span>)</div><div class="line">$ window.localStorage.getItem(<span class="string">'LIST'</span>) // item1</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ window.localStorage.removeItem(<span class="string">'LIST'</span>)</div><div class="line">$ window.localStorage.clear()</div></pre></td></tr></table></figure>
+<p>以上是localStorage的基本操作方法（sessionStorage也是一样的）包括对存储信息的增删改查和清空操作</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/11/你需要知道几种本地存储方法-2/" class="archive-article-date">
-  	<time datetime="2017-10-11T03:47:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunkvp.com/2017/10/11/你需要知道几种本地存储方法-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/08/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-08T09:02:00.335Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/08/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -242,8 +328,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
